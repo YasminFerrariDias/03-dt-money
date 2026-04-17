@@ -51,7 +51,7 @@ export function TransactionsProvider({ children }: TransactionContextProviderPro
       setTransactions(response.data);
     }
   }, []
-)
+  )
 
   const createTransaction = useCallback(
     async (data: CreateTransactionInput) => {
@@ -73,7 +73,7 @@ export function TransactionsProvider({ children }: TransactionContextProviderPro
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchTransactions();
-  }, [])
+  }, [fetchTransactions])
 
   return (
     <TransactionsContext.Provider value={{ transactions, fetchTransactions, createTransaction }}>
