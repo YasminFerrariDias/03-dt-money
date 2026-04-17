@@ -1,84 +1,20 @@
 {
   "transactions": [
     {
-      "id": "1",
-      "description": "Desenvolvimento de site",
-      "type": "income",
-      "category": "Venda",
-      "price": 14000,
-      "createdAt": "2022-07-29T19:36:44.505Z"
-    },
-    {
-      "id": "2",
-      "description": "Hambúrguer",
-      "type": "outcome",
-      "category": "Alimentação",
-      "price": 60,
-      "createdAt": "2022-07-29T19:30:44.505Z"
-    },
-    {
-      "id": "3",
-      "description": "Ignite Rockeseat",
-      "type": "outcome",
-      "category": "Educação",
-      "price": 1980,
-      "createdAt": "2022-07-29T19:30:54.505Z"
-    },
-    {
       "description": "Desenvolvimento de APP",
-      "price": 100000,
-      "category": "Venda",
+      "price": 10000,
+      "category": "Desenvolvimento",
       "type": "income",
-      "createdAt": "2026-04-17T18:17:55.524Z",
-      "id": "g4X1szlhmuM"
+      "createdAt": "2026-04-17T19:51:21.835Z",
+      "id": "qAlyZDZUA-I"
     },
     {
-      "description": "Desenvolvimento de APP2",
-      "price": 234,
-      "category": "Venda",
+      "description": "Almoço",
+      "price": 1000,
+      "category": "Alimento",
       "type": "outcome",
-      "createdAt": "2026-04-17T18:30:44.524Z",
-      "id": "sknNITlJQrE"
-    },
-    {
-      "description": "Desenvolvimento de APP4",
-      "price": 234,
-      "category": "Venda",
-      "type": "outcome",
-      "createdAt": "2026-04-17T18:30:56.532Z",
-      "id": "7tXeJyG0KOg"
-    },
-    {
-      "description": "ds",
-      "price": 234,
-      "category": "Venda",
-      "type": "income",
-      "createdAt": "2026-04-17T18:56:50.462Z",
-      "id": "sy4YGBsXvs8"
-    },
-    {
-      "description": "dso",
-      "price": 234,
-      "category": "Venda",
-      "type": "income",
-      "createdAt": "2026-04-17T18:57:10.269Z",
-      "id": "nzaFpQRRGKA"
-    },
-    {
-      "description": "Desenvolvimento de APP5",
-      "price": 234,
-      "category": "Venda",
-      "type": "outcome",
-      "createdAt": "2026-04-17T19:00:35.652Z",
-      "id": "ADQzXfo8pJE"
-    },
-    {
-      "description": "ds",
-      "price": 234,
-      "category": "Venda",
-      "type": "income",
-      "createdAt": "2026-04-17T19:12:32.095Z",
-      "id": "4DSx7V1tOpk"
+      "createdAt": "2026-04-17T19:52:15.629Z",
+      "id": "t477coSg5EU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
