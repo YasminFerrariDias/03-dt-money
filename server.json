@@ -71,6 +71,14 @@
       "type": "outcome",
       "createdAt": "2026-04-17T19:00:35.652Z",
       "id": "ADQzXfo8pJE"
+    },
+    {
+      "description": "ds",
+      "price": 234,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2026-04-17T19:12:32.095Z",
+      "id": "4DSx7V1tOpk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
