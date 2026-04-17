@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react"
+import { useEffect, useState, useCallback, type ReactNode } from "react"
 import { api } from "../lib/axios";
 import { createContext } from "use-context-selector";
 
@@ -34,7 +34,7 @@ export const TransactionsContext = createContext({} as TransactionContextType)
 export function TransactionsProvider({ children }: TransactionContextProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
-  async function fetchTransactions(query?: string) {
+  const fetchTransactions = useCallback(async (query?: string) => {
     if (query && query.trim() !== '') {
       const response = await api.get('/transactions');
       const allTransactions = response.data;
@@ -47,25 +47,28 @@ export function TransactionsProvider({ children }: TransactionContextProviderPro
 
       setTransactions(filtered);
     } else {
-      // Busca sem filtro
       const response = await api.get('/transactions');
       setTransactions(response.data);
     }
-  }
+  }, []
+)
 
-  async function createTransaction(data: CreateTransactionInput) {
-    const { description, price, category, type } = data;
+  const createTransaction = useCallback(
+    async (data: CreateTransactionInput) => {
+      const { description, price, category, type } = data;
 
-    const response = await api.post('/transactions', {
-      description,
-      price,
-      category,
-      type,
-      createdAt: new Date()
-    })
+      const response = await api.post('/transactions', {
+        description,
+        price,
+        category,
+        type,
+        createdAt: new Date()
+      })
 
-    setTransactions(state => [response.data, ...state])
-  }
+      setTransactions(state => [response.data, ...state])
+    },
+    [],
+  )
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
