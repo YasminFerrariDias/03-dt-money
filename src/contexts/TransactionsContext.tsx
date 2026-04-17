@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState, type ReactNode } from "react"
+import { api } from "../lib/axios";
 
 interface Transaction {
   id: number;
@@ -25,22 +26,21 @@ export function TransactionsProvider({ children }: TransactionContextProviderPro
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
   async function fetchTransactions(query?: string) {
-  try {
-    const response = await fetch('http://localhost:3333/transactions');
-    let data = await response.json();
+  if (query && query.trim() !== '') {
+    const response = await api.get('/transactions');
+    const allTransactions = response.data;
     
-    // Filtra manualmente se tiver query
-    if (query && query.trim() !== '') {
-      const searchTerm = query.toLowerCase();
-      data = data.filter((transaction: Transaction) => 
-        transaction.description.toLowerCase().includes(searchTerm) ||
-        transaction.category.toLowerCase().includes(searchTerm)
-      );
-    }
+    const searchTerm = query.toLowerCase();
+    const filtered = allTransactions.filter((transaction: Transaction) => 
+      transaction.description.toLowerCase().includes(searchTerm) ||
+      transaction.category.toLowerCase().includes(searchTerm)
+    );
     
-    setTransactions(data);
-  } catch (error) {
-    console.error('Erro ao buscar transações:', error);
+    setTransactions(filtered);
+  } else {
+    // Busca sem filtro
+    const response = await api.get('/transactions');
+    setTransactions(response.data);
   }
 }
 
