@@ -3,7 +3,7 @@ import { Header } from "../../components/Header";
 import { Searchform } from "../../components/SearchForm";
 import { Summary } from "../../components/Summary";
 import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
-import { TransactionsContext } from "../../contexts/TransactionsContex";
+import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { dateFormatter, priceFormatter } from "../../utils/formatter";
 
 export function Transactions() {
